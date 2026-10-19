@@ -1,0 +1,39 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "1. Setup: create .venv and install website requirements",
+      "type": "shell",
+      "windows": {
+        "command": "python -m venv .venv; .\\.venv\\Scripts\\python -m pip install -r requirements.txt"
+      },
+      "linux": {
+        "command": "python3 -m venv .venv && ./.venv/bin/python -m pip install -r requirements.txt"
+      },
+      "osx": {
+        "command": "python3 -m venv .venv && ./.venv/bin/python -m pip install -r requirements.txt"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "1b. Setup for Streamlit version",
+      "type": "shell",
+      "windows": {
+        "command": "python -m venv .venv; .\\.venv\\Scripts\\python -m pip install -r requirements-streamlit.txt"
+      },
+      "linux": {
+        "command": "python3 -m venv .venv && ./.venv/bin/python -m pip install -r requirements-streamlit.txt"
+      },
+      "osx": {
+        "command": "python3 -m venv .venv && ./.venv/bin/python -m pip install -r requirements-streamlit.txt"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "2. (Optional) install pipeline requirements — PyTorch, PyG, gensim",
+      "type": "shell",
+      "command": "${command:python.interpreterPath} -m pip install -r pipeline/requirements.txt",
+      "problemMatcher": []
+    }
+  ]
+}
